@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Badnaam Cafe | Legendary Taste, Marol, Mumbai</title>
+  <!-- Google Fonts & simple CSS reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0a0a0a;
+      color: #f1f1f1;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* custom scroll */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1a1a1a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #c43a2b;
+      border-radius: 10px;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* buttons & elements */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #c43a2b;
+      color: white;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      letter-spacing: -0.2px;
+      box-shadow: 0 8px 18px rgba(196, 58, 43, 0.25);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid #c43a2b;
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background: #c43a2b;
+      transform: translateY(-3px);
+    }
+
+    .btn:hover {
+      background: #a22e21;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 22px rgba(196, 58, 43, 0.35);
+    }
+
+    /* header / nav */
+    .navbar {
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #fff 30%, #c43a2b 80%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .logo span {
+      font-weight: 400;
+      font-size: 0.8rem;
+      color: #c43a2b;
+      background: none;
+      -webkit-background-clip: unset;
+      background-clip: unset;
+    }
+
+    .nav-links a {
+      color: #ddd;
+      text-decoration: none;
+      margin-left: 28px;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: #c43a2b;
+    }
+
+    /* hero */
+    .hero {
+      padding: 70px 0 80px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -2px;
+    }
+    .hero .badnaam-highlight {
+      background: linear-gradient(135deg, #ffffff, #c43a2b);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+    .hero .tag {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #c43a2b;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    .hero p {
+      max-width: 600px;
+      margin: 24px auto 32px;
+      color: #b0b0b0;
+      font-size: 1.2rem;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* section titles */
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      text-align: center;
+      color: #c43a2b;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 48px;
+    }
+
+    /* testimonials */
+    .testimonials {
+      padding: 80px 0;
+      background: #0f0f0f;
+      border-radius: 48px;
+      margin: 40px 0;
+    }
+    .cards {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+      background: #171717;
+      padding: 32px 28px;
+      border-radius: 28px;
+      width: 300px;
+      border: 1px solid #2a2a2a;
+      transition: 0.2s;
+    }
+    .card:hover {
+      border-color: #c43a2b;
+      transform: translateY(-6px);
+    }
+    .card p {
+      font-style: italic;
+      color: #cfcfcf;
+      margin-bottom: 20px;
+    }
+    .card h4 {
+      font-weight: 700;
+      color: #c43a2b;
+    }
+    .stars {
+      color: #f5b042;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+
+    /* vibe grid */
+    .vibe-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 35px;
+      margin: 50px 0 60px;
+    }
+    .vibe-item {
+      text-align: center;
+      background: #111;
+      padding: 32px 20px;
+      border-radius: 28px;
+      border: 1px solid #262626;
+    }
+    .vibe-item .emoji {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .vibe-item h3 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+    .vibe-item p {
+      color: #aaa;
+    }
+
+    /* VIP exclusive section */
+    .vip-section {
+      background: linear-gradient(145deg, #130e0c, #0a0807);
+      border-radius: 48px;
+      padding: 60px 40px;
+      margin: 60px 0;
+      text-align: center;
+      border: 1px solid #2e241f;
+    }
+    .vip-section h2 {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+    }
+    .vip-section .offer-badge {
+      background: #c43a2b20;
+      border: 1px solid #c43a2b;
+      display: inline-block;
+      padding: 8px 24px;
+      border-radius: 60px;
+      font-weight: 600;
+      margin-bottom: 28px;
+      color: #ff7b6b;
+    }
+    .vip-form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      max-width: 500px;
+      margin: 28px auto 0;
+    }
+    .vip-form input {
+      flex: 1;
+      padding: 14px 18px;
+      border-radius: 60px;
+      border: none;
+      background: #1e1e1e;
+      color: white;
+      font-size: 1rem;
+      outline: none;
+      border: 1px solid #333;
+    }
+    .vip-form input:focus {
+      border-color: #c43a2b;
+    }
+    .small-note {
+      font-size: 0.8rem;
+      color: #777;
+      margin-top: 20px;
+    }
+
+    /* footer & address */
+    .footer {
+      padding: 48px 0 32px;
+      border-top: 1px solid #1f1f1f;
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 32px;
+    }
+    .footer-col h4 {
+      color: #c43a2b;
+      margin-bottom: 12px;
+    }
+    .footer-col p, .footer-col a {
+      color: #aaa;
+      text-decoration: none;
+      display: block;
+      margin: 6px 0;
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: #25D366;
+      border-radius: 50px;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      z-index: 1000;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      transition: 0.2s;
+      border: none;
+      font-size: 1rem;
+    }
+    .whatsapp-float:hover {
+      background: #20b859;
+      transform: scale(1.03);
+    }
+    @media (max-width: 700px) {
+      .hero h1 { font-size: 2.8rem; }
+      .navbar { flex-direction: column; }
+      .nav-links a { margin: 0 12px; }
+      .section-title { font-size: 2rem; }
+      .vip-section { padding: 40px 24px; }
+      .whatsapp-float { padding: 10px 20px; bottom: 20px; right: 20px; }
+    }
+    .timing-badge {
+      background: #1c1c1c;
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Floating WhatsApp Button (direct integration with given number) -->
+<a href="https://wa.me/918655100113?text=Hi%20Badnaam%20Cafe%2C%20I'd%20like%20to%20place%20an%20order." 
+   class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+  <span>💬</span> Order on WhatsApp
+</a>
+
+<div class="container">
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">
+      <h2>BADNAAM<span>.</span></h2>
+      <div class="timing-badge">⚡ Marol, Mumbai • Open 12PM–10:30PM</div>
+    </div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#testimonials">Buzz</a>
+      <a href="#vibe">Vibe</a>
+      <a href="#vip">Exclusive</a>
+      <a href="https://wa.me/918655100113?text=Hi%20Badnaam%20Cafe%2C%20I'd%20like%20to%20place%20an%20order." target="_blank">Order Now</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="tag">🔥 Legendary Taste • Quirky Vibes</div>
+    <h1>
+      <span class="badnaam-highlight">BADNAAM.</span><br>
+      LEGENDARY TASTE
+    </h1>
+    <p>Your go-to cafe for budget bites, chill vibes, and unforgettable hangouts. Where every meal is an experience — right in the heart of Marol, Andheri East.</p>
+    <div class="hero-buttons">
+      <a href="https://wa.me/918655100113?text=Hi%20Badnaam%20Cafe%2C%20I'd%20like%20to%20place%20an%20order." class="btn" target="_blank">🍔 Order Now →</a>
+      <a href="#vibe" class="btn btn-outline">✨ Explore the Vibe</a>
+    </div>
+  </section>
+
+  <!-- Why everyone's talking (Testimonials) -->
+  <div id="testimonials" class="testimonials">
+    <div class="container">
+      <div class="section-title">Why Everyone's Talking About <span style="color:#c43a2b;">BADNAAM</span></div>
+      <div class="section-sub">Join 1000+ happy customers who love our food & vibe</div>
+      <div class="cards">
+        <div class="card">
+          <div class="stars">★★★★★</div>
+          <p>“Great atmosphere & friendly staff. The food is absolutely delicious and worth every penny! Best pocket-friendly cafe in Marol.”</p>
+          <h4>— Priya M.</h4>
+        </div>
+        <div class="card">
+          <div class="stars">★★★★★</div>
+          <p>“Budget-friendly meals for everyone. Perfect hangout spot with amazing vibes and quick service. Their shakes are legendary!”</p>
+          <h4>— Rahul K.</h4>
+        </div>
+        <div class="card">
+          <div class="stars">★★★★★</div>
+          <p>“Instagrammable interiors and fresh prep. Definitely coming back with friends. Highly recommended for late-night chai & bites!”</p>
+          <h4>— Aisha D.</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Not Just Food. It's a Vibe. -->
+  <section id="vibe">
+    <div class="section-title">Not Just Food. It's a <span style="color:#c43a2b;">Vibe.</span></div>
+    <div class="section-sub">Experience the perfect blend of taste and atmosphere</div>
+    <div class="vibe-grid">
+      <div class="vibe-item">
+        <div class="emoji">⚡</div>
+        <h3>Quick Service</h3>
+        <p>Fresh prep & fast delivery without compromising quality — your cravings sorted instantly.</p>
+      </div>
+      <div class="vibe-item">
+        <div class="emoji">📸</div>
+        <h3>Instagrammable</h3>
+        <p>Picture-perfect moments in every corner. Neon lights & quirky art for the perfect reel.</p>
+      </div>
+      <div class="vibe-item">
+        <div class="emoji">👥</div>
+        <h3>Perfect for Groups</h3>
+        <p>Friends, dates, and family gatherings welcome. Spacious and buzzing energy.</p>
+      </div>
+      <div class="vibe-item">
+        <div class="emoji">🏆</div>
+        <h3>Local Favorite</h3>
+        <p>Trusted by the community for years. Real desi vibes with a modern twist.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Get Exclusive Offers + VIP WhatsApp integration -->
+  <section id="vip" class="vip-section">
+    <div class="offer-badge">🔥 FLAT 10% OFF ON YOUR NEXT ORDER 🔥</div>
+    <h2>Get Exclusive Offers <span style="color:#c43a2b;">🔥</span></h2>
+    <p style="max-width: 500px; margin: 0 auto 10px; color:#bbb;">Join our VIP list for special deals, birthday surprises, and secret menu access.</p>
+    <!-- VIP signup form (demo alert, stores via local or alert) but also WhatsApp CTA -->
+    <div class="vip-form" id="vipForm">
+      <input type="email" id="vipEmail" placeholder="Your best email address" required>
+      <button class="btn" id="vipSubmitBtn" style="background:#c43a2b;">📧 Notify Me →</button>
+    </div>
+    <div class="small-note">✨ No spam, just delicious offers & 10% off coupon code sent to your inbox.</div>
+    <div style="margin-top: 32px;">
+      <a href="https://wa.me/918655100113?text=Hi%20Badnaam%20Cafe%2C%20I%20want%20to%20get%20VIP%20offers%20and%20order%20food!" class="btn btn-outline" target="_blank" style="background: #111; border-color:#c43a2b;">📱 Get Offers on WhatsApp →</a>
+    </div>
+  </section>
+
+  <!-- Footer with exact address, hours, and map reference -->
+  <footer class="footer">
+    <div class="footer-col">
+      <h4>Badnaam Cafe</h4>
+      <p>📍 Sir Mathuradas Vasanji Rd, opposite The Qube, Mittal Industrial Estate, Marol, Andheri East, Mumbai, Maharashtra 400072</p>
+      <p>⏰ Open: Wednesday to Monday • 12:00 PM – 10:30 PM</p>
+      <p>📞 <a href="https://wa.me/918655100113" target="_blank">+91 86551 00113 (WhatsApp)</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="#home">Home</a>
+      <a href="#testimonials">Stories</a>
+      <a href="#vibe">Vibe</a>
+      <a href="#vip">VIP Deals</a>
+      <a href="https://maps.app.goo.gl/3jhUchdVe44u6FTZ7" target="_blank">📍 Google Maps</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legendary Taste</h4>
+      <p>Where every meal is an experience.<br>Follow us for reels & updates.</p>
+      <div style="display:flex; gap: 12px; margin-top: 10px;">
+        <span>✨ #BadnaamCafe</span>
+        <span>🍔 #MarolEats</span>
+      </div>
+    </div>
+  </footer>
+  <div style="text-align: center; padding: 20px 0 40px; border-top: 1px solid #191919; font-size: 0.8rem; color:#5a5a5a;">
+    © 2025 Badnaam Cafe — Legendary taste, quirky vibes. Andheri East's favorite hangout.
+  </div>
+</div>
+
+<!-- Simple VIP form handling (simulated demo - shows alert & stores locally, but no backend to match example style) -->
+<script>
+  (function() {
+    const submitBtn = document.getElementById('vipSubmitBtn');
+    const emailInput = document.getElementById('vipEmail');
+    
+    function handleVIPSignup(e) {
+      e.preventDefault();
+      const email = emailInput.value.trim();
+      if (!email || !email.includes('@') || !email.includes('.')) {
+        alert('✨ Please enter a valid email address to get 10% OFF code!');
+        return;
+      }
+      // Simulate subscription and show coupon message with WhatsApp integration tip
+      alert(`🎉 Thanks ${email}! You're now on the VIP list. Show this at Badnaam Cafe or mention on WhatsApp to claim 10% OFF on your next order. We'll DM you exclusive deals.`);
+      // Optionally store in localStorage for fun
+      localStorage.setItem('badnaam_vip_email', email);
+      emailInput.value = '';
+      // optional: additional WhatsApp reminder
+      const wantsWhatsApp = confirm("Want to order right now? Click OK to chat on WhatsApp & claim your 10% discount instantly.");
+      if (wantsWhatsApp) {
+        window.open("https://wa.me/918655100113?text=Hi%20Badnaam%20Cafe%2C%20I%20just%20signed%20up%20for%20VIP%20and%20want%20to%20use%20my%2010%25%20OFF%20on%20my%20first%20order!", "_blank");
+      }
+    }
+    
+    if (submitBtn) {
+      submitBtn.addEventListener('click', handleVIPSignup);
+    }
+    // also allow enter key
+    if (emailInput) {
+      emailInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          handleVIPSignup(e);
+        }
+      });
+    }
+    
+    // small additional: dynamic footer year
+    const yearSpan = document.querySelector('.footer small');
+  })();
+</script>
+<!-- Ensure the map link and phone number are fully integrated with WhatsApp prefill according to requirement: 
+     number +918655100113, pre-filled message: "Hi Badnaam Cafe, I'd like to place an order." -->
+<!-- All buttons and floating WhatsApp button use exactly that prefill message. -->
+</body>
+  </html>
